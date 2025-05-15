@@ -71,7 +71,7 @@ img {
   max-width: 1158px;
   min-width: 320px;
   padding: 0 16px;
-  margin: 0 auto;
+  align-items: center;
 }
 
 .title-center {
@@ -169,25 +169,71 @@ img {
 /* ------------section--------- */
 
 .section {
+  display: flex;
+  justify-content: center;
   margin-bottom: 96px;
 }
 
 /* ------------baner------------- */
 
 .section_baner {
-  /* margin: 0 auto; */
-  max-width: 320px;
+  width: 100%;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office.jpg);
+    url(../images/dark/Dark-bg-mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   padding-top: 72px;
-
-  margin-bottom: 96px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 767px) and (min-resolution: 192dpi) {
+  .section_baner {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/dark/Dark-bg-mob@2.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .section_baner {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/dark/Dark-bg-tabl.jpg);
+  }
+  @media (min-resolution: 192dpi) {
+    .section_baner {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/dark/Dark-bg-tabl@2.jpg);
+    }
+  }
+}
+@media screen and (min-width: 1158px) {
+  .section_baner {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/dark/Dark-bg.jpg);
+  }
+  @media (min-resolution: 192dpi) {
+    .section_baner {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/dark/Dark-bg@2.jpg);
+    }
+  }
 }
 
 .baner_title {
@@ -349,7 +395,8 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
 }
-
+@media (min-width: 768) {
+}
 .team_item_name {
   font-weight: 500;
   font-size: 20px;
@@ -548,7 +595,7 @@ img {
   left: 50%;
   border-radius: 4px;
   width: 288px;
-  height: 90vh;
+  height: 623px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background: #fcfcfc;
@@ -609,6 +656,8 @@ img {
   margin-bottom: 16px;
 }
 
+.modal-form {
+}
 .wrap-input {
   margin-bottom: 8px;
 }
