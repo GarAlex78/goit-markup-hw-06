@@ -63,22 +63,41 @@ img {
   overflow: hidden;
 }
 
-/*--------------- container---------- */
-/* flex контейнеру обезательно нужно задавать ширину и висоту!!! */
-.container {
+
+/* ------------section--------- */
+
+.section {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  padding-top: 96px;
+
+  
+}
+
+@media (min-width:1158px) {
+  .section {
+    padding-top: 120px;
+  
+  }
+}
+
+
+/*--------------- container---------- */
+/* INFO flex контейнеру обезательно нужно задавать ширину и висоту!!! */
+.container {
+  /* display: flex;
+  flex-direction: column; */
   max-width: 1158px;
   min-width: 320px;
   padding: 0 16px;
-  align-items: center;
+  /* align-items: center; */
 }
 
-@media (min-width:768px){
+/* @media (min-width:768px){
   .container {
     flex-direction: row;
   }
-}
+} */
 
 @media (min-width:1158px){
   .container {
@@ -137,7 +156,7 @@ img {
 .button-menu {
   background-color: transparent;
 /* властивість "outline" майже дублює "border" але невпливає на розмір кнопки  ----  незрозуміло навіщо воно тут */
-  outline: none;
+ outline: none;
  border: none;
 }
 .header_nav {
@@ -241,14 +260,6 @@ img {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ------------section--------- */
-
-.section {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 96px;
-}
-
 
 /* ------------baner------------- */
 
@@ -267,7 +278,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (max-width: 767px) and (min-resolution: 192dpi) {
+@media screen and (max-width: 768px) and (min-resolution: 192dpi) {
   .section_baner {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
@@ -382,21 +393,68 @@ max-width: 496px;
 
 /*---------------- srtategy----------- */
 
+.strategy-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 72px;
+  margin-bottom: 96px;
+}
+@media (min-width:768px){
+  .strategy-list {
+justify-content:space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap:24px;
+   max-width: 736px;
+  }
+
+}
+
+@media (min-width:1158px){
+  .strategy-list {
+    min-width: 1128px;
+    flex-wrap:nowrap;
+    column-gap:24px;
+    margin-bottom: 120px;
+  }
+
+}
 .strategy-list-item {
   max-width: 288px;
 }
 
-.strategy-icon {
-  height: 112px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px 100px;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  margin-bottom: 8px;
-  background-color: #f4f4fd;
+@media (min-width:768px){
+
+  .strategy-list-item {
+    max-width: 356px;
+  }
 }
+
+@media (min-width:1158px){
+
+  .strategy-list-item {
+    max-width: 264px;
+  }
+}
+
+.strategy-icon{
+  display: none;
+}
+
+@media (min-width:1158px){
+  .strategy-icon {
+    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 100px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: #f4f4fd;
+  }
+}
+
 
 .srtategy_title {
   font-weight: 700;
@@ -408,6 +466,19 @@ max-width: 496px;
   margin-bottom: 8px;
 }
 
+@media (min-width:768px){
+  .srtategy_title {
+    text-align: start;
+  }
+}
+@media (min-width:1158px){
+  .srtategy_title{
+font-weight: 500;
+font-size: 20px;
+line-height: 1.2;
+  }
+}
+
 .srtategy_paragraph {
   font-weight: 500;
   font-size: 16px;
@@ -416,20 +487,55 @@ max-width: 496px;
   color: var(--body-text-color);
 }
 
-.strategy-list {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
+@media (min-width:1158px){
+
+  .srtategy_paragraph {
+    font-weight: 400;
+  }
 }
 
+
 /*----------------- team -------------*/
+
+.section_team_title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #2e2f42;
+  width: 163px;
+  margin-bottom: 72px;
+}
 
 .team_list
 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 72px;
+  row-gap: 72px;
+  margin-bottom: 96px;
+}
+
+@media (min-width:768px) {
+  .team_list
+  {
+    max-width: 552px;
+    flex-direction: row;
+    flex-wrap: wrap;
+   justify-content: center;
+    row-gap: 64px;
+    column-gap: 24px;
+  }
+}
+
+@media (min-width:1158px) {
+  .team_list
+  {
+    min-width: 1128px;
+    margin-bottom: 120px;
+   
+  }
 }
 
 .team-svg-list {
@@ -480,21 +586,14 @@ max-width: 496px;
   padding-top: 96px;
 }
 
-.section_team_title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
-  text-transform: capitalize;
-  color: #2e2f42;
-  width: 163px;
-  margin-bottom: 72px;
+@media (min-width:1158px){
+  .section_team {
+   
+    padding-top: 120px;
+  }
 }
 
-.team_list {
-  /* column-gap: 24px; */
-  margin-bottom: 96px;
-}
+
 
 .team_list_item {
   background-color: var(--white-background-color);
@@ -545,6 +644,27 @@ max-width: 496px;
   display: flex;
   flex-direction: column;
   row-gap: 48px;
+  margin-bottom: 96px;
+}
+
+@media (min-width:768px){
+  .portfolio_list {
+    max-width: 736px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 72px;
+    column-gap: 24px;
+   
+  }
+}
+
+@media (min-width:1158px){
+  .portfolio_list {
+   min-width: 1128px;
+   row-gap: 48px;
+   
+    margin-bottom: 120px;
+  }
 }
 
 .servce_product {
@@ -604,12 +724,50 @@ max-width: 496px;
   padding: 96px 0;
 }
 
-.footer-list {
-  gap: 72px;
+@media (min-width:768px){
+  .footer{
+    padding: 100px 0;
+  }
 }
 
+.footer-list {
+  display: flex;
+    row-gap: 72px;
+    flex-direction: column;
+   align-items: center;
+}
+
+@media (min-width:768px){
+  .footer-list{
+    max-width: 528px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   align-items: flex-start;
+  }
+
+}
+
+
+@media (min-width:1158px){
+  .footer-list{
+    max-width: 1125px;
+  }
+
+}
+
+
 .footer-item-one {
+  max-width: 288px;
   /* margin-right: 120px; */
+}
+
+@media (min-width:768px){
+  .footer-item-one {
+    max-width: 264px;
+   
+  }
+
 }
 
 .logo_span {
@@ -624,7 +782,7 @@ max-width: 496px;
 
 .footer_text {
   margin: 0 auto;
-  max-width: 288px;
+  
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--light-color);
@@ -632,7 +790,7 @@ max-width: 496px;
 
 .footer-item-two {
   max-width: 208px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .footer-item-title {
   font-weight: 500;
@@ -644,6 +802,15 @@ max-width: 496px;
   text-align: center;
 }
 
+@media (min-width:768px) {
+  .footer-item-title { 
+    
+    text-align: start;
+  
+  }
+ 
+
+}
 .footer-svg-list {
   display: flex;
   justify-content: space-between;
@@ -714,6 +881,13 @@ max-width: 496px;
   padding: 50px 24px 24px 24px;
 }
 
+@media (min-width:768px){
+  .modal{
+    width: 408px;
+    height: 95%;
+    padding-top:60px;
+  }
+}
 .backdrop:not(.is-open) .modaltransform {
   transform: translate(-50%, -50%) scale(2);
 }
@@ -767,10 +941,14 @@ max-width: 496px;
 }
 
 .modal-form {
+  display: flex
+  ;
+      flex-direction: column;
+      gap: 8px;
 }
-.wrap-input {
+/* .wrap-input {
   margin-bottom: 8px;
-}
+} */
 
 .modal-input {
   position: relative;
@@ -797,7 +975,7 @@ max-width: 496px;
 
 .input-area {
   width: 100%;
-  height: 60px;
+  min-height: 100px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 12px;
   line-height: 1.17;
@@ -827,13 +1005,6 @@ max-width: 496px;
   color: rgba(46, 47, 66, 0.4);
 }
 
-.modal-input textarea {
-  padding: 0;
-  height: 120px;
-  resize: none;
-  margin-bottom: 11px;
-}
-
 .wrap-input input:hover,
 .wrap-input input:focus {
   border-color: #4d5ae5;
@@ -849,14 +1020,21 @@ max-width: 496px;
   fill: var(--primary-brand-color);
 }
 
-/* .wrp-area {
+.wrp-area {
   margin-bottom: 16px;
-} */
+}
 
 .modal-checkbox-wrap {
   display: flex;
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 24px;
+}
+@media (min-width:768px){
+  .modal-checkbox-wrap {
+   
+    margin-bottom: 16px;
+  }
+
 }
 
 .check {
@@ -936,6 +1114,14 @@ max-width: 496px;
   align-items: center;
 }
 
+@media (min-width:768px){
+  .footer-form{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    column-gap: 24px;
+  }
+}
 .footer-subscribe-input {
   border: 1px solid #fff;
   border-radius: 4px;
@@ -951,6 +1137,14 @@ max-width: 496px;
   letter-spacing: 0.04em;
   padding-left: 16px;
   margin-bottom: 16px;
+}
+
+@media (min-width:768px){
+  
+  .footer-subscribe-input {
+width:264px;
+  }
+
 }
 
 .footer-subscribe-input::placeholder {
