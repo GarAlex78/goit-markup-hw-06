@@ -83,14 +83,16 @@ img {
   max-width: 1158px;
   min-width: 320px;
   padding: 0 16px;
+  margin: 0 auto;
 }
 
-@media (min-width: 1158px) {
+/* @media (min-width: 1158px) {
   .container {
-    /* max-width: 1128px;*/
+  
     margin: 0 auto;
   } 
-}
+} 
+*/
 
 .title-center {
   text-align: center;
